@@ -60,10 +60,11 @@ export default class App extends Component {
     return (
       <div>
         <Searchbar onSubmit={this.onSubmitForm} />
-        <ImageGallery images={images} onClick={this.handleImageClick} />
+        {images.length > 0 && (<ImageGallery images={images} onClick={this.handleImageClick} />)}
+        
 
         {isLoading && <Loader />}
-        {showButton && loadMore && <Button onClick={this.clickLoadMore} />}
+        {!isLoading && showButton && loadMore && <Button onClick={this.clickLoadMore} />}
         {modalVisible && (
           <Modal image={selectedImage} onClose={this.modalClose} />
         )}
