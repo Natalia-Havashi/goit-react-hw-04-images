@@ -1,6 +1,7 @@
 import '../../styles.css';
 import { BiSolidDownload } from 'react-icons/bi';
 import PropTypes from 'prop-types';
+
 export const Button = ({ onClick }) => {
   return (
     <div className="Container-button">
